@@ -43,11 +43,12 @@ ADRES_PODPISU="https://cdn.kernel.org/pub/linux/kernel/v5.x/${wybor}.tar.sign"
 
 function kernele() {
 	zmienne;	
-	echo -e "\e[32m${tablica_logo["0"]}\e[0m"
 	curl --compressed -o kernele.asc $ADRES_KERNELA_PLIKI
 	clear
+	echo -e "\e[32m${tablica_logo["0"]}\e[0m"
 	grep -o 'linux-[0-9]\+.[0-9]\+.[0-9]\+' kernele.asc > kernele.txt
-	readarray -t menu < kernele.txt
+	sort -n -t "." -k3 kernele.txt > kernele-sort.txt
+	readarray -t menu < kernele-sort.txt
 	for i in "${!menu[@]}"; do
 		menu_list[$i]="${menu[$i]%% *}"
 	done
@@ -60,7 +61,6 @@ function kernele() {
 			*)
 			echo "Wybrałeś $wybor"		
 			zmienne;
-			echo ""
                         if [ ! -f "$wybor" ] && [ ! -f "$KERNEL_SIGN" ]; then {
 		         	if curl --output /dev/null --silent --head --fail "$ADRES_KERNELA"; then {
 			                echo -e "\e[32m Kernel istnieje : $ADRES_KERNELA , pobieram :\e[0m"
@@ -97,10 +97,8 @@ function kernele() {
 		esac
 		break
 		done
-	echo -e "\e[33mWyniki zapisałem w plikach:"
-	echo -e "\e[32m$wybor.txt\e[0m"
 	read -p "Press ENTER"
-	echo "Zakończyłem sprawdzanie"
+	clear
 }
 
 kernele;
