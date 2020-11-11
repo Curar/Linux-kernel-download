@@ -1,0 +1,4 @@
+*.asc
+*.tar.xz
+*.tar.sign
+*.txt
