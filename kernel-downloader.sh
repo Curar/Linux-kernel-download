@@ -29,9 +29,9 @@ tablica_logo["0"]="
 "
 echo -e "\e[33m${tablica_info["0"]}\e[0m"
 echo -e "\e[32m${tablica_logo["0"]}\e[0m"
-echo -e "\e[33mDZIEŃ DOBRY\e[0m"
+echo -e "\e[33mHELLOW !\e[0m"
 echo ""
-read -p "Naduś ENTER"
+read -p "Press ENTER"
 clear
 
 # Definicja zmiennych
