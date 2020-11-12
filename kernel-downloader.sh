@@ -46,8 +46,9 @@ function kernele() {
 	curl --compressed -o kernele.asc $ADRES_KERNELA_PLIKI
 	clear
 	echo -e "\e[32m${tablica_logo["0"]}\e[0m"
-	grep -o 'linux-[0-9]\+.[0-9]\+.[0-9]\+' kernele.asc > kernele.txt
-	sort -n -t "." -k3 kernele.txt > kernele-sort.txt
+	#grep -o 'linux-[0-9]\+.[0-9]\+.[0-9]\+.tar.xz' kernele.asc > kernele.txt
+	grep -o "linux-[0-9].[0-9].[0-9].tar.xz" kernele.asc > kernele-sort.txt	
+	sort -n -t "." kernele.txt > kernele-sort.txt
 	readarray -t menu < kernele-sort.txt
 	for i in "${!menu[@]}"; do
 		menu_list[$i]="${menu[$i]%% *}"
