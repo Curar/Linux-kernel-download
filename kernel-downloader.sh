@@ -2,8 +2,8 @@
 # 
 # By Curar 2020r.
 #
-# Skrypt który automatycznie pobiera i kompiluje źródło jądra ze strony 
-# https://kernel.org przy użyciem programu curl, gpg.
+# Skrypt który automatycznie pobiera jądra ze strony 
+# https://kernel.org przy użyciem programu curl, gpg, readarray
 # https://github.com/gpg/gnupg
 # https://gnupg.org/
 #
