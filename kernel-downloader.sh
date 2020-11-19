@@ -36,8 +36,8 @@ clear
 
 # Definicja zmiennych
 function zmienne() {
-ADRES_KERNELA_PLIKI="https://cdn.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc"
-ADRES_KERNELA="https://cdn.kernel.org/pub/linux/kernel/v5.x/${wybor}"
+export ADRES_KERNELA_PLIKI="https://cdn.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc"
+export ADRES_KERNELA="https://cdn.kernel.org/pub/linux/kernel/v5.x/${wybor}"
 }
 
 function kernele() {
@@ -48,6 +48,7 @@ function kernele() {
 	grep -o "linux-[0-9]\+.[0-9]\+.[0-9]\+.tar.xz" kernele.asc > kernele.txt	
 	sort -n -t "." kernele.txt > kernele-sort.txt
 	readarray -t menu < kernele-sort.txt
+	echo $ADRES_KERNELA
 	for i in "${!menu[@]}"; do
 		menu_list[$i]="${menu[$i]%% *}"
 	done
@@ -62,7 +63,7 @@ function kernele() {
 			echo "You chose : $wybor"		
 			sign=`echo $wybor | cut -f1 -d "t" | awk '{ printf("%star.sign", $1); }'` 
 			ADRES_PODPISU="https://cdn.kernel.org/pub/linux/kernel/v5.x/${sign}"
-			zmienne;
+			ADRES_KERNELA="https://cdn.kernel.org/pub/linux/kernel/v5.x/${wybor}"
 			if [ ! -f "$wybor" ] && [ ! -f "$KERNEL_SIGN" ]; then {
 		         	if curl --output /dev/null --silent --head --fail "$ADRES_KERNELA"; then {
 			                echo -e "\e[32m Kernel exists : $ADRES_KERNELA , download :\e[0m"
@@ -102,4 +103,6 @@ function kernele() {
 	clear
 }
 
+while :; do
 kernele;
+done
