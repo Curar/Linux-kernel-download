@@ -63,7 +63,7 @@ function kernele() {
 			echo "You chose : $wybor"		
 			sign=`echo $wybor | cut -f1 -d "t" | awk '{ printf("%star.sign", $1); }'` 
 			ADRES_PODPISU="https://cdn.kernel.org/pub/linux/kernel/v5.x/${sign}"
-			ADRES_KERNELA="https://cdn.kernel.org/pub/linux/kernel/v5.x/${wybor}"
+			zmienne;
 			if [ ! -f "$wybor" ] && [ ! -f "$KERNEL_SIGN" ]; then {
 		         	if curl --output /dev/null --silent --head --fail "$ADRES_KERNELA"; then {
 			                echo -e "\e[32m Kernel exists : $ADRES_KERNELA , download :\e[0m"
