@@ -46,7 +46,7 @@ function kernele() {
 	clear
 	echo -e "\e[32m${tablica_logo["0"]}\e[0m"
 	grep -o "linux-[0-9]\+.[0-9]\+.[0-9]\+.tar.xz" kernele.asc > kernele.txt	
-	sort -n -t "." kernele.txt > kernele-sort.txt
+	sort -V kernele.txt > kernele-sort.txt
 	readarray -t menu < kernele-sort.txt
 	echo $ADRES_KERNELA
 	for i in "${!menu[@]}"; do
