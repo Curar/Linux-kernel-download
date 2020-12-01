@@ -10,6 +10,7 @@
 # Write using vim editor
 # https://github.com/vim/vim
 # https://www.vim.org/
+# Wersja 1.0
 
 clear
 tablica_info["0"]="
