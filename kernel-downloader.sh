@@ -71,7 +71,7 @@ function kernele() {
 	mapfile -t menu < kernele-sort.txt
 	echo $ADRES_KERNELA
 	for i in "${!menu[@]}"; do
-		menu_list[$i]="${menu[$i]%% *}"
+		menu_list[$i]="${menu[$i]}"
 	done
 	echo -e "\e[32mChoose a kernel :\e[0m"
 		select wybor in "${menu_list[@]}" "EXIT"; do
