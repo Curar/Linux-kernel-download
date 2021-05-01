@@ -1,5 +1,5 @@
 ## Auto download kernel source from https://kernel.org on terminal
-### You need curl and grep and gpg and readarray in your system to script run property !!!
+### You need curl and grep and gpg and mapfile in your system to script run property !!!
 ### Script installation :
 `git clone https://github.com/Curar/Linux-kernel-download.git`
 ### To run :
