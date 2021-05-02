@@ -3,7 +3,7 @@
 # By Curar 2020r.
 #
 # Skrypt który automatycznie pobiera jądra ze strony 
-# https://kernel.org przy użyciem programu curl, gpg, readarray
+# https://kernel.org przy użyciem programu curl, gpg, mapfile
 # https://github.com/gpg/gnupg
 # https://gnupg.org/
 #
