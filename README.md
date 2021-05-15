@@ -2,7 +2,7 @@
 ### You need curl and grep and gpg and mapfile in your system to script run property !!!
 ### To download script :
 `https://raw.githubusercontent.com/Curar/Linux-kernel-download/main/kernel-downloader.sh`
-### Script installation :
+### Or clon all :
 `git clone https://github.com/Curar/Linux-kernel-download.git`
 ### To run :
 `./kernel-downloader.sh`
