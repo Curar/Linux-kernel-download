@@ -127,8 +127,14 @@ function kernele() {
 while :; do
 unset menu_list
 echo -e "\e[32m${tablica_logo["0"]}\e[0m"
-select galaz in "Downloads kernel 4.x" "Downloads kernel 5.x" "EXIT"; do
+select galaz in "Downloads kernel 3.x" "Downloads kernel 4.x" "Downloads kernel 5.x" "EXIT"; do
 	case "$galaz" in
+		"Downloads kernel 3.x")
+			unset galaz
+			unset wybor
+			unset menu
+			galaz="v3.x"
+		;;
 		"Downloads kernel 4.x")
 			unset galaz
 			unset wybor
